@@ -1,0 +1,79 @@
+<div class="cart-content-container">
+  <div class="mycart-title-content">Mi carrito</div>
+  <div class="cart-checout-container">
+    <div class="mycart-site">
+      <div class="number-circle">1</div>
+      <div class="mycart-text">Mi carrito</div>
+    </div>
+    <div class="hr"><hr /></div>
+    <div class="checkout-site">
+      <div class="checkout-number-circle">2</div>
+      <div class="checkout-text">Checkout</div>
+    </div>
+  </div>
+  <div class="filter-container">
+    <input type="checkbox" name="select-all" id="" /> Seleccionar todo
+  </div>
+  <div class="products-summary-content-container">
+    <div class="products-container">
+      <div
+        class="product-image-content-container"
+        *ngFor="let product of products"
+      >
+        <div class="select-box">
+          <input type="checkbox" name="select-single" id="" />
+        </div>
+        <div class="product-image-container">
+          <img
+            src="{{ product.imgPath }}"
+            alt=""
+            class="product-image"
+          />
+        </div>
+        <div class="product-content-container">
+          <div class="product-content">
+            <div class="product-name">{{ product.name }} <br /><br /></div>
+            <div class="product-price">{{ product.price }} <br /><br /></div>
+            <div class="add-remove-buttons" style="display: flex">
+              <div class="remove-button-container">
+                <button class="remove-button">-</button>
+              </div>
+              <!-- automated number while clicking in - or + -->
+              <div class="number-container">2</div>
+              <div class="add-button-container">
+                <button class="add-button">+</button>
+              </div>
+              <br /><br />
+            </div>
+          </div>
+        </div>
+        <div class="product-delete">X</div>
+      </div>
+    </div>
+    <div class="summary-content-container">
+      <div class="coupon-content">
+        <button type="submit" class="coupon-button">
+          <!-- icon -->
+          <img src="../../../assets/coupon.png" alt="" id="coupon-image"> Tiene un cupon?      >
+        </button>
+      </div>
+      <div class="summary-content">
+        <div class="summary-title">
+          <h4>Summary</h4>
+        </div>
+        <div class="total-price-container">
+          <div class="total-content">Total</div>
+          <div class="price-content">$202.88</div>
+        </div>
+        <div class="checkout-container">
+          <button type="submit" class="checkout-button">Checkout</button>
+        </div>
+        <div class="continue-redirect">
+          <a href="#" style="color: orangered; text-decoration: none"
+            >Continuar comprando</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

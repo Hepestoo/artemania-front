@@ -1,0 +1,9 @@
+<div class="container">
+  <app-login-form (onLoginUser)="loginUser($event)">
+
+  </app-login-form>
+
+
+  <p *ngIf="loggedInFailed"> Credenciales incorrectas </p>
+
+</div>

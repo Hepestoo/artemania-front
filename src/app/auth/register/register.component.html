@@ -1,0 +1,12 @@
+<div class="container">
+  <app-register-form (onRegisterUser)="registerUser($event)">
+
+  </app-register-form>
+
+
+  <p *ngIf="userCreated"> Usuario creado exitosamente</p>
+
+  <p *ngIf="userExist"> El usuario ya exite </p>
+
+  <p *ngIf="badRequest"> Algo salio mal, Intentelo de nuevo! </p>
+</div>

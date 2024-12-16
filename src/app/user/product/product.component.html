@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="top-search-container">
+    <div class="column left"></div>
+    <div class="column content">
+      <div class="looking-for-text">
+        <h1>Que estas buscando?</h1>
+      </div>
+      <div class="search-form">
+        <form class="search" action="">
+          <button type="menu" class="left-button-icon">
+            <i class="fa fa-search"></i>
+          </button>
+          <input type="text" placeholder="Buscar.." name="search2" [(ngModel)]="searchTerm" />
+        </form>
+      </div>
+    </div>
+    <div class="column right"></div>
+  </div>
+  <div class="filter-products-container">
+    <div class="filter-container">
+      <div class="all-categories">
+        <p>Todas las categorias</p>
+      </div>
+      <div>
+        <ul>
+          <div>Scrapbooking</div>
+          <div>Resina</div>
+          <div>Cartonaje</div>
+          <div>Cursos</div>
+          <div>Talleres</div>
+          <div>Impresiones 3D</div>
+        </ul>
+      </div>
+    </div>
+    <div class="products-container">
+      <div class="products-information-filters">
+        <div class="text-information">Mostrando 6 of 6 resultados</div>
+        <div class="icon-filter-information">
+          <div class="sort-icon">
+            <i class="fa fa-sort"></i>
+          </div>
+          <div class="sort-dropdown">
+            <p>Filtrar</p>
+          </div>
+        </div>
+      </div>
+      <app-pagination [productsFetched]="productsData"></app-pagination>
+    </div>
+  </div>
+</div>

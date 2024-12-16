@@ -1,0 +1,74 @@
+<section class="payment-method">
+    <h2>Metodo de pago</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Informacion de compra</h3>
+            <form [formGroup]="shippingForm">
+                <div class="form-group">
+                    <label for="full-name">Nombre completo</label>
+                    <input type="text" id="full-name" formControlName="fullName" required>
+                    <div *ngIf="shippingForm.get('fullName').invalid && (shippingForm.get('fullName').dirty || shippingForm.get('fullName').touched)"
+                        class="error-message">Nombre completo es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="street-address">Direccion</label>
+                    <input type="text" id="street-address" formControlName="streetAddress" required>
+                    <div *ngIf="shippingForm.get('streetAddress').invalid && (shippingForm.get('streetAddress').dirty || shippingForm.get('streetAddress').touched)"
+                        class="error-message">Direccion es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="city">Ciudad</label>
+                    <input type="text" id="city" formControlName="city" required>
+                    <div *ngIf="shippingForm.get('city').invalid && (shippingForm.get('city').dirty || shippingForm.get('city').touched)"
+                        class="error-message">Ciudad es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="state">Provincia</label>
+                    <input type="text" id="state" formControlName="state" required>
+                    <div *ngIf="shippingForm.get('state').invalid && (shippingForm.get('state').dirty || shippingForm.get('state').touched)"
+                        class="error-message">Provincia es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="zip-code">Codigo postal</label>
+                    <input type="text" id="zip-code" formControlName="zipCode" required>
+                    <div *ngIf="shippingForm.get('zipCode').invalid && (shippingForm.get('zipCode').dirty || shippingForm.get('zipCode').touched)"
+                        class="error-message">Codigo postal</div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>Informacion de facturacion</h3>
+            <form [formGroup]="billingForm">
+                <div class="form-group">
+                    <label for="name-on-card">Nombre de tarjeta</label>
+                    <input type="text" id="name-on-card" formControlName="nameOnCard" required>
+                    <div *ngIf="billingForm.get('nameOnCard').invalid && (billingForm.get('nameOnCard').dirty || billingForm.get('nameOnCard').touched)"
+                        class="error-message">Nombre de tarjeta es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Numero de tarjeta</label>
+                    <input type="text" id="card-number" formControlName="cardNumber" required>
+                    <div *ngIf="billingForm.get('cardNumber').invalid && (billingForm.get('cardNumber').dirty || billingForm.get('cardNumber').touched)"
+                        class="error-message">Numero de tarjeta es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="expiration-date">Fecha de expiracion</label>
+                    <input type="date" id="expiration-date" formControlName="expirationDate" required>
+                    <div *ngIf="billingForm.get('expirationDate').invalid && (billingForm.get('expirationDate').dirty || billingForm.get('expirationDate').touched)"
+                        class="error-message">Fecha de expiracion es obligatiorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="security-code">Codigo de seguridad</label>
+                    <input type="text" id="security-code" formControlName="securityCode" required>
+                    <div *ngIf="billingForm.get('securityCode').invalid && (billingForm.get('securityCode').dirty || billingForm.get('securityCode').touched)"
+                        class="error-message">Codigo de seguridad es obligatorio</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="place-order-btn-div">
+        <button class="place-order-btn" (click)="placeOrder()">Guardar</button>
+    </div>
+</section>

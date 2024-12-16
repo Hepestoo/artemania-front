@@ -1,0 +1,43 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="email">Email: </label>
+  <input type="text" name="email" placeholder="Email" formControlName="email">
+  <div *ngIf="
+        loginForm.get('email').invalid &&
+        (loginForm.get('email').dirty ||
+          loginForm.get('email').touched)
+      ">
+    <p *ngIf="loginForm.get('email').errors['required']">
+      Email es obligatorio
+    </p>
+    <p *ngIf="loginForm.get('email').errors['pattern']">
+      Email invalido
+    </p>
+  </div>
+  <br>
+
+  <label for="password">Contrasena: </label>
+  <input type="password" name="password" placeholder="*********" formControlName="password">
+  <div *ngIf="
+        loginForm.get('password').invalid &&
+        (loginForm.get('password').dirty ||
+          loginForm.get('password').touched)
+      ">
+    <p *ngIf="loginForm.get('password').errors['required']">
+      Contrasena es obligatorio
+    </p>
+    <p *ngIf="loginForm.get('password').errors['minlength']">
+      Debe contener 8 caracteres
+    </p>
+    <p *ngIf="loginForm.get('password').errors['pattern']">
+      La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un carácter especial y un
+      número.
+    </p>
+  </div>
+  <br>
+
+  <button [disabled]="loginForm.invalid">Login</button>
+
+  <div class="not-registered">
+    ya tiene cuenta? <a routerLink="/register">Registrarse</a>
+  </div>
+</form>

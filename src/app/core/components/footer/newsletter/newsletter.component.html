@@ -1,0 +1,18 @@
+<div class="newsletter-footer">
+  <div class="newsletter-footer__left">
+    <div class="newsletter-footer__text">
+      <h1 class="newsletter-footer__title">Enterate de las ultimas noticias</h1>
+      <p class="newsletter-footer__description">Recibe las ultimas noticias a tu correo</p>
+    </div>
+  </div>
+  <div class="newsletter-footer__right">
+    <form class="newsletter-footer__form" (ngSubmit)="onSubmit()" [formGroup]="newsletterForm">
+      <input type="email" placeholder="Ingresa tu email" class="newsletter-footer__input" name="email" formControlName="email" />
+      <div *ngIf="newsletterForm.get('email').invalid && (newsletterForm.get('email').dirty || newsletterForm.get('email').touched)">
+        <p *ngIf="newsletterForm.get('email').errors['required']">Email es obligatorio</p>
+        <p *ngIf="newsletterForm.get('email').errors['pattern']">Email invalido</p>
+      </div>
+      <button type="submit" class="newsletter-footer__button">Unirse</button>
+    </form>
+  </div>
+</div>

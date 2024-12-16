@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="product-sale">
+    <div class="product-discount"> {{ product.discount }}% descuento</div>
+    <div class="product-display">
+      <img src="../../../../../assets/producto1.png" alt="Product Image" class="product-image">
+    </div>
+    <div class="product-title"> {{ product.name }} </div>
+    <div class="product-price"> {{ product.price }} </div>
+    <div class="product-amount"> {{ product.finalPrice() }} </div>
+  </div>
+</div>
